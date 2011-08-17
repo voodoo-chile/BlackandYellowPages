@@ -1,0 +1,18 @@
+<% title "Specialties" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+  </tr>
+  <% for specialty in @specialties %>
+    <tr>
+      <td><%= specialty.user.username %></td>
+      <td><%= specialty.name %></td>
+      <td><%= link_to "Edit", edit_specialty_path(specialty) %></td>
+      <td><%= link_to "Destroy", specialty, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Specialty", new_specialty_path %></p>

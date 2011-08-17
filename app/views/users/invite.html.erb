@@ -1,0 +1,25 @@
+<% title "#{current_user.username} : Invite a New User" %>
+
+<%= render :partial => 'left' %>
+
+<div id="center_column">
+  <div class="column_header">
+    <h3>Invite an Agorist to join Black & Yellow Pages</h3>
+  </div>
+  <p>By sponsoring an agorist to join Black & Yellow Pages, you are helping to widen our trust network.  Each accepted invitation will create a two-way trust link between the sponsor and sponsoree.</p>
+  <p>To accept your invitation, the invitee will require the generated sponsor key.</p>
+  <p>You may copy/paste the invitation below, or craft your own, just make sure the invitee receives the sponsor key.</p>
+  <h3>An Invitation to Join Black and Yellow Pages</h3>
+  <p>Hello!</p>
+  <p>As you may or may not know, I have been using a private network called Black & Yellow Pages to reach customers and suppliers.  I have generated an invitation for you to join, if you would like.</p>
+  <p>The establishment means of conducting business and personal relationships are force, fraud, and bad faith. People who still believe in honesty, sanctity of contract, and voluntary consent are forced to conduct their lives in a counter-establishment way.</p>
+  <p>The purpose of Black & Yellow Pages is to act as a directory for counter-establishment "economists" like us, to promote our way of conducting business.</p>
+  <p>If you accept this invitation, Black & Yellow Pages will create a free, customizable listing for you. This listing will help customers find your business.</p>
+  <p>
+    Registration Link:<br />
+    http://blackandyellowpages.com/users/new?key=<%= @sponsor_key.key %><br/>
+    Expires: <%= @sponsor_key.expiration %>
+  </p>
+</div>
+
+<%= render :partial => 'right' %>

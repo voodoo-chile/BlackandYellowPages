@@ -1,0 +1,25 @@
+one:
+  id: 1
+  username: MyString
+  email: MyString
+  roles_mask: 1
+  sponsor_id: 1
+  crypted_password: MyString
+  password_salt: MyString
+  persistence_token: MyString
+  last_login_at: 2011-07-15 10:50:07
+  perishable_token: MyString
+  active: false
+
+two:
+  id: 2
+  username: MyString
+  email: MyString
+  roles_mask: 1
+  sponsor_id: 1
+  crypted_password: MyString
+  password_salt: MyString
+  persistence_token: MyString
+  last_login_at: 2011-07-15 10:50:07
+  perishable_token: MyString
+  active: false

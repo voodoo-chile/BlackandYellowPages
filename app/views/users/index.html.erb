@@ -1,0 +1,30 @@
+<% title "Users" %>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Roles</th>
+    <th>Sponsor</th>
+    <th>Active</th>
+    <th>Last Login</th>
+
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= link_to user.username, user %></td>
+      <td><%= mail_to user.email %></td>
+      <td><%= user.roles.join(", ").titleize %></td>
+      <td align="center">
+        <% if user.sponsor_id == 0 %>
+	      <span class="alert_text"><%= link_to "Orphan", :action => 'orphanage' %></span>
+	    <% else %>
+	      <%= link_to user.sponsor.username, user.sponsor %>
+	    <% end %>
+      </td>
+      <td align="center"><%= user.active %></td>
+      <td><%= user.current_login_at %></td>
+      <td><%= link_to "Edit", edit_user_path(user) %></td>
+    </tr>
+  <% end %>
+</table>

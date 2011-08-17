@@ -1,0 +1,63 @@
+<div id="right_column">
+   <div class="column_header">
+	  <h3>Sponsorship
+       <%= link_to image_tag("question.png"), pages_faq_url(:anchor => "sponsor") %>
+	  </h3>
+   </div>
+	<div id="sponsorship_panel">
+	  <p>
+	    <b>Sponsor:</b>
+	    <br />
+	    <% if @user.sponsor_id == 0 %>
+	      <span class="alert_text">Orphan</span>
+	      <%= link_to image_tag("question.png"), pages_faq_url(:anchor => "orphan") %>
+	    <% else %>
+	      <%= link_to @user.sponsor.username, @user.sponsor %>
+	    <% end %>
+	  </p>
+	  <p>
+	    <b>Sponsorees:</b>
+	    <br />
+	    <% for sponsoree in @user.sponsorees %>
+	      <%= link_to sponsoree.username, sponsoree %><br />
+	    <% end %>
+	  </p>
+	</div>
+	<% if current_user %>
+     <% if @user.sponsor == current_user && @user.id != 1 %>
+	    <%= link_to "(Orphan #{@user.username})", :action => 'orphan', :id => @user.id %><br />
+     <% elsif @user == current_user && can?(:invite, User) %>
+	    (<%= link_to "Invite a New User", :controller => 'users', :action => 'invite', :id => current_user.id %>)<br />
+	  <% end %>
+	  (<%= link_to "Visit the Orphanage", :controller => 'users', :action => 'orphanage' %>)
+   <% end %>
+   <div class="column_header">
+     <h3>Trust Links
+       <%= link_to image_tag("question.png"), pages_faq_url(:anchor => "trust_links") %>
+     </h3>
+   </div>
+   <div id="trust_panel">
+     <p>
+       <b>Incoming:</b> <%= link_to incoming_trust_count, :controller => 'users', :action => 'trust_links', :id => @user.id %><br />
+       <b>Outgoing:</b> <%= link_to outgoing_trust_count, :controller => 'users', :action => 'trust_links', :id => @user.id %><br />
+     </p>
+   </div>
+   <% if current_user && current_user != @user.sponsor && current_user.sponsor != @user && current_user != @user %>
+     <% if prior_trust? %>
+       (<%= link_to( "Sever your Trust", :controller => 'users', :action => 'sever_trust', :id => @user.id) %>)
+     <% else %>
+       (<%= link_to( "Trust #{@user.username}", :controller => 'users', :action => 'trust', :id => @user.id) %>)
+     <% end %>
+   <% end %>
+	<div class="column_header">
+	  <h3>Agorist News</h3>
+   </div>
+	<div id="news_panel">
+	  <p>
+  	    <% get_news_items %>
+	    <% for item in @items %>
+    	    <%= link_to item.title, item %><br />
+	    <% end %>
+	  </p>
+	</div>
+</div>

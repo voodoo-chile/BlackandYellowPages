@@ -1,0 +1,52 @@
+<div id="left_column">
+   <div class="column_header">
+     <h3>
+       Contact <%= @user.username %>
+     </h3>
+   </div>
+	<div id="contact_panel">
+     <% if @user == current_user %>
+       <p><%= link_to "Edit Contact Info", edit_user_path(current_user) %></p>
+     <% end %>
+     <% contact(@user) %>
+     <% if !@user.contact.phone.blank? %>
+	    <p><b>Phone:</b><br />
+	      <%= number_to_phone(@user.contact.phone, :area_code => true) %>
+	    </p>
+	  <% end %>
+	  <% if !@user.contact.skype.blank? %>
+	    <p><b>Skype Name:</b><br />
+	      <%= @user.contact.skype %>
+	    </p>
+	  <% end %>
+	  <% if !@user.contact.aol.blank? %>
+	    <p><b>AOL Nickname:</b><br />
+	      <%= @user.contact.aol %>
+	    </p>
+	  <% end %>
+	  <% if !@user.contact.icq.blank? %>
+	    <p><b>ICQ Number:</b><br />
+	      <%= @user.contact.icq %>
+	    </p>
+	  <% end %>
+	  <% if !@user.contact.yim.blank? %>
+	    <p><b>Yahoo! IM:</b><br />
+	      <%= @user.contact.yim %>
+	    </p>
+	  <% end %>
+	  <p>
+	    <b>Email:</b><br />
+	    <%= mail_to @user.email, @user.email, :subject => "Contacting you through Black & Yellow Pages", :encode => :hex %>
+	  </p>
+	  <% if !@user.contact.public_key.blank? %>
+	    <p>
+	      <b>Public Encryption Key:</b>
+	      <img src="/images/question.png" 
+	             alt="?" 
+	             title="For secure, encrypted communication with this agorist, please use this public key in your email client.">
+	      <br />
+	      <%= auto_select_text_area_tag('key_block', @user.contact.public_key, :size => "65x30") %>
+	    </p>
+	  <% end %>
+	</div>
+</div>

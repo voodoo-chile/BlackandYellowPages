@@ -1,0 +1,20 @@
+<% title "Welcome to Black & Yellow Pages" %>
+
+<div id="latest_news_container">
+  <div class="column_header">
+      <h3>Latest News</h3>
+    </div>
+    <h3><%= @featured_news.title %></h3>
+    <%= simple_format(@featured_news.body) %>
+    <h3>Other News</h3>
+    <% @latest_news.each do |item| %>
+       <%= link_to item.title, item %>
+    <% end %>
+  </div>
+ 
+ <div id="featured_listings">
+   <div class="column_header">
+      <h3>Latest Listings</h3>
+    </div>
+   <%= render 'featured_listings' %>
+ </div>

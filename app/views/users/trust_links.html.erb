@@ -1,0 +1,22 @@
+<% title @user.username %>
+
+<%= render :partial => 'left' %>
+
+<div id="center_column">
+  <div class="column_header">
+    <h3>Incoming Trust Links for <%= @user.username %></h3>
+  </div>
+  <% for incoming_link in @incoming_links %>
+    <%= incoming_link.created_at %> -
+    <%= link_to incoming_link.user.username, incoming_link.user %><br />
+  <% end %>
+  <div class="column_header">
+    <h3>Outgoing Trust Links</h3>
+  </div>
+  <% for trust_link in @user.trust_links %>
+    <% trustee = User.find(trust_link.trustee) %>
+    <%= trust_link.created_at %> -
+    <%= link_to trustee.username, trustee  %><br />
+  <% end %>
+</div>
+<%= render :partial => 'right' %>

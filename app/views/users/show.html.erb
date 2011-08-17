@@ -1,0 +1,46 @@
+<% if current_user  && @user != current_user %>
+  <% content_for :title do %>
+    <%= @user.username %> - <%= @degrees_of_trust %> degrees of trust from you
+  <% end %>
+<% else %>
+  <% title @user.username %>
+<% end %>
+
+<%= render :partial => 'left' %>
+
+<div id="center_column">
+  <% if @user == current_user && current_user.roles.include?("orphan") %>
+    <div class="column_header">
+      <h3>Sponsorship Offers</h3>
+    </div>
+    <% if @user.adoption_offers %>
+      <table>
+        <% @user.adoption_offers.each do |offer| %>
+          <% if offer.status == 'pending' && offer.expiration > Date.today %>
+            <tr>
+              <td><%= link_to offer.potential_sponsor.username.capitalize, offer.potential_sponsor %> has offered to sponsor you.</td>
+              <td><%= button_to "Accept", :controller => 'sponsorship_offers', :action => 'accept', :id => offer.id %></td>
+              <td><%= button_to "Reject", :controller => 'sponsorship_offers', :action => 'reject', :id => offer.id %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    <% else %>
+      No sponsorship offers have been received.
+    <% end%>
+  <% end %>
+  <div class="column_header">
+    <h3>Specialty Listings by <%= @user.username %></h3>
+  </div>
+  <div id="specialty_panel">
+    <% if @user == current_user %>
+      <%= link_to "Add a New Specialty Listing", new_specialty_path %>
+      <p></p>
+    <% end %>
+    <% for specialty in @user.specialties %>
+      <%= render :partial => "listing", :locals => { :specialty => specialty } %>
+    <% end %>
+  </div>
+</div>
+
+<%= render :partial => 'right' %>

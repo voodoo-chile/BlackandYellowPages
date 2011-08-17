@@ -1,0 +1,24 @@
+Sat, 13 Aug 2011 20:26:55 -0700
+doc/README_FOR_APP	Fri, 15 Jul 2011 08:59:44 -0700
+app/mailers/notifier.rb	Fri, 12 Aug 2011 20:24:46 -0700
+app/helpers/user_sessions_helper.rb	Fri, 15 Jul 2011 11:27:51 -0700
+app/helpers/users_helper.rb	Fri, 12 Aug 2011 19:33:19 -0700
+app/helpers/error_messages_helper.rb	Fri, 15 Jul 2011 09:24:31 -0700
+app/helpers/specialties_helper.rb	Mon, 18 Jul 2011 09:35:54 -0700
+app/helpers/application_helper.rb	Fri, 15 Jul 2011 08:59:44 -0700
+app/helpers/layout_helper.rb	Fri, 15 Jul 2011 09:24:31 -0700
+app/helpers/pages_helper.rb	Sat, 13 Aug 2011 11:51:08 -0700
+app/controllers/sponsorship_offers_controller.rb	Fri, 12 Aug 2011 17:39:02 -0700
+app/controllers/specialties_controller.rb	Sat, 13 Aug 2011 15:39:27 -0700
+app/controllers/users_controller.rb	Sat, 13 Aug 2011 16:02:36 -0700
+app/controllers/pages_controller.rb	Fri, 05 Aug 2011 09:32:03 -0700
+app/controllers/user_sessions_controller.rb	Fri, 05 Aug 2011 12:13:56 -0700
+app/controllers/application_controller.rb	Fri, 05 Aug 2011 14:41:01 -0700
+app/models/specialty.rb	Sat, 13 Aug 2011 14:28:12 -0700
+app/models/user.rb	Sat, 13 Aug 2011 17:58:45 -0700
+app/models/contact.rb	Fri, 15 Jul 2011 14:39:14 -0700
+app/models/sponsorship_offer.rb	Fri, 12 Aug 2011 20:25:20 -0700
+app/models/user_session.rb	Fri, 15 Jul 2011 11:18:05 -0700
+app/models/trust_link.rb	Fri, 12 Aug 2011 17:59:46 -0700
+app/models/ability.rb	Sat, 13 Aug 2011 15:53:39 -0700
+app/models/sponsor_key.rb	Mon, 08 Aug 2011 19:53:44 -0700

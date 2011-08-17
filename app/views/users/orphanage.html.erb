@@ -1,0 +1,24 @@
+<% title "User Orphanage" %>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= link_to user.username, user %></td>
+      <td><%= mail_to user.email %></td>
+      <% if sponsorship_offered?(user) %>
+        <% if @offer.expiration > Date.today %>
+          <td>Current offer, expires <%= @offer.expiration %></td>
+        <% else %>
+          <td>Expired offer. <%= link_to "Renew?", adopt_user_path(user) %></td>
+        <% end %>
+      <% else %>
+      <td><%= link_to "Sponsor this user", adopt_user_path(user) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

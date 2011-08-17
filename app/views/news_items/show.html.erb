@@ -1,0 +1,14 @@
+<% title @news_item.title %>
+
+<div id="news_item">
+  <%= simple_format(@news_item.body) %>
+</div>
+
+<div id="more_news_items">
+  <div class="column_header">
+    <h3>Other News Items</h3>
+  </div>
+  <% for item in @items %>
+    <%= link_to item.title, item %>
+  <% end %>
+</div>

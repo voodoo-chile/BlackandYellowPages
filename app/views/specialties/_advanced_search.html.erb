@@ -1,0 +1,6 @@
+<%= form_tag :controller => 'specialties', :action => 'search', :method => 'post' do %>
+  Find <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  within <%= text_field_tag :distance, params[:distance], :id => 'distance_field', :size => 5 %> miles
+  of <%= text_field_tag :location, params[:location], :id => 'location_field' %>
+  <%= submit_tag "Search", :name => nil %> 
+<% end %> 

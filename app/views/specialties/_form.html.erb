@@ -1,0 +1,59 @@
+<%= form_for @specialty do |f| %>
+  <%= f.error_messages %>
+    <table>
+      <tr>
+        <td><b>Business Name:</b></td>
+        <td><%= f.text_field :name, :size => 20 %></td>
+      </tr>
+      <tr>
+        <td><b>Line 1:</b></td>
+        <td><%= f.text_field :line1, :maxlength => 50 %></td>
+      </tr>
+      <tr>
+        <td><b>Line 2:</b></td>
+        <td><%= f.text_field :line2, :maxlength => 50 %></td>
+      </tr>
+      <tr>
+        <td><b>Phone:</b></td>
+        <td><%= f.text_field :phone, :size => 20 %></td>
+      </tr>
+      <tr>
+        <td><b>Email:</b></td>
+        <td><%= f.text_field :email, :size => 20 %></td>
+      </tr>
+      <tr>
+        <td><b>URL:</b></td>
+        <td><%= f.text_field :url, :size => 20 %></td>
+      </tr>
+      <tr>
+        <td><b>Address:</b></td>
+        <td><%= f.text_field :street, :size => 30 %></td>
+      </tr>
+      <tr>
+        <td><b>City:</b></td>
+        <td><%= f.text_field :city, :size => 20 %></td>
+      </tr>
+      <tr>
+        <td><b>State/Province:</b></td>
+        <td><%= f.text_field :region, :size => 20 %></td>
+      </tr>
+      <tr>
+        <td><b>Country Code:</b></td>
+        <td><%= f.text_field :country, :size => 10 %></td>
+      </tr>      
+      <tr>
+        <td><b>Postal Code:</b></td>
+        <td><%= f.text_field :postal_code, :size => 10 %></td>
+      </tr>
+      <tr>
+        <td><b>Tags:</b></td>
+        <td>
+          <%= f.text_field :tag_list, :size => 50 %><br />
+          Separate tags with commas.
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.submit %></td>
+      </tr>
+    </table>
+<% end %>

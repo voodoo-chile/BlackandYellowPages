@@ -1,0 +1,34 @@
+<% get_featured_listings %>
+<div id="featured_listings_container">
+  <% for specialty in @specialties %>
+    <div class="listing_container">
+      <div class="list_agorist">
+        <%= link_to specialty.user.username, specialty.user %>  
+      </div>
+      <div class="listing">
+        <div class="list_name">
+          <%= specialty.name %>  
+        </div>
+        <p class="list_text">
+          <%= specialty.line1 %><br />
+          <%= specialty.line2 %>
+        </p>
+        <p class="list_location">
+          <%= specialty.street.titleize %><br />
+          <%= specialty.city %>,
+          <%= specialty.region %>
+          (<%= specialty.country %>)
+          <%= specialty.postal_code %>
+        </p>
+        <div class="list_contact">
+          <% if !specialty.phone.blank? %>
+            <%= number_to_phone(specialty.phone, :area_code => true) %>
+          <% end %> 
+          <%= mail_to specialty.email %><br />
+          <%= link_to specialty.url, specialty.url %>
+        </div>
+      </div>
+    </div>
+    <p></p>
+  <% end %>
+</div>

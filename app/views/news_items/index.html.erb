@@ -1,0 +1,25 @@
+<% title "News Items" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th align="left">Title</th>
+    <th>Featured</th>
+  </tr>
+  <% for news_item in @news_items %>
+    <tr>
+      <td><%= news_item.user.username %></td>
+      <td><%= link_to news_item.title, edit_news_item_path(news_item) %></td>
+      <td align="center">
+        <% if news_item.featured? %>
+          <img src="/images/checked.png">
+        <% else %>
+          <%= link_to image_tag("not_checked.png"), feature_news_item_path(news_item) %>
+        <% end %>
+      </td>
+      <td><%= link_to "Destroy", news_item, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New News Item", new_news_item_path %></p>

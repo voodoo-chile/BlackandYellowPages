@@ -1,0 +1,58 @@
+<%= form_for @user do |f| %>
+  <%= f.error_messages %>
+  <%= hidden_field_tag 'sponsor_key', @key %>
+  <table>
+    <tr>
+      <td align="left" valign="top">
+        <table>
+          <tr>
+            <td><b>User Name:</b></td>
+            <td><%= f.text_field :username %></td>
+          </tr>
+          <tr>
+            <td><b>Email:</b></td>
+            <td><%= f.text_field :email %></td>
+          </tr>
+          <tr>
+            <td><b>Password:</b></td>
+            <td><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td><b>Password Confirmation:</b></td>
+            <td><%= f.password_field :password_confirmation %></td>
+          </tr>
+        </table>
+      </td>
+      <td align="right">
+        <%= f.fields_for :contact do |contact_fields| %>
+          <table id="contact_panel">
+            <tr>
+              <td COLSPAN=4 align="center"><b>Optional Contact Information</b></td>
+            </tr>
+            <tr>
+              <td><b>Phone Number:</b></td>
+              <td><%= contact_fields.text_field :phone, :size => 15 %></td>
+              <td><b>Skype Name:</b></td>
+              <td><%= contact_fields.text_field :skype, :size => 15 %></td>
+            </tr>
+            <tr>
+              <td><b>AOL Name:</b></td>
+              <td><%= contact_fields.text_field :aol, :size => 15 %></td>
+              <td><b>ICQ Number:</b></td>
+              <td><%= contact_fields.text_field :icq, :size => 15 %></td>
+            </tr>
+            <tr>
+              <td valign="top"><b>Yahoo! IM Name:</b></td>
+              <td valign="top"><%= contact_fields.text_field :yim, :size => 15 %></td>
+            </tr>
+            <tr>
+              <td valign="top"><b>Public Key:</b></td>
+              <td COLSPAN=3><%= contact_fields.text_area :public_key, :size => "64x30" %></td>
+            </tr>
+          </table>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,312 @@
+body {
+  background-color: #000;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+  background-image: url('/images/a3_background.png');
+  background-repeat: repeat-x;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 1100px;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 30px;
+  border: solid 1px black;
+  margin-top: 20px;
+  overflow: auto;
+}
+
+#flash_notice, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+  width: 500px;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+#agorist_nav {
+  float: right;
+  font-size: 12px;
+}
+
+#logo {
+  float: left;
+}
+
+#content {
+  clear: both;
+  padding-top: 1px;
+}
+
+#left_column {
+  float: left;
+}
+
+#key_block {
+  font-size: 5px;
+}
+
+#center_column {
+  width: 520px;
+  padding: 0px 20px;
+  float: left;
+}
+
+#contact_panel {
+  padding: 0px 10px;
+  background-color: #EEE;
+  border: solid 1px black;
+}
+
+#specialty_panel {
+  float: left;
+}
+
+#right_column {
+  float: right;
+
+}
+
+#sponsorship_panel {
+  padding: 0px 10px;
+  background-color: #EEE;
+  border: solid 1px black;
+}
+
+#trust_panel {
+  padding: 0px 10px;
+  background-color: #EEE;
+  border: solid 1px black;
+}
+
+#news_panel {
+  padding: 0px 10px;
+  background-color: #EEE;
+  border: solid 1px black;
+}
+
+#site_panel {
+  padding: 0px 10px;
+  background-color: #EEE;
+  border: solid 1px black;
+  float: right;
+}
+
+#agorists_panel {
+  padding: 0px 10px;
+  background-color: #EEE;
+  border: solid 1px black;
+  float: left;
+}
+
+.listing_container {
+  width: 400px;
+}
+
+.search_listing_container {
+  width: 400px;
+  height: 190px;
+}
+
+.list_category {
+  font-size: 12px;
+  float: left;
+}
+
+.list_agorist {
+  font-size: 12px;
+  float: right;
+}
+
+.listing {
+  clear: both;
+  background-color: #f3f393;
+  border: solid 2px black;
+  width: 400px;
+}
+
+.search_listing {
+  clear: both;
+  background-color: #f3f393;
+  border: solid 2px black;
+  width: 400px;
+  height: 170px;
+}
+
+.list_name {
+  background-color: #000;
+  color: #f3f393;
+  width:100%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list_text {
+  color: #000;
+  text-align: center;
+}
+
+.list_location {
+  color: #000;
+  text-align: center;
+}
+
+.list_contact {
+  color: #000;
+  text-align: center;
+}
+
+.list_contact a {
+  color: #000
+}
+
+#category_tree {
+  float: left;
+  height: 100%;
+}
+
+.tree_group {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tree_sub {
+  text-indent: 10px;
+}
+
+#instructions {
+  float: left;
+  padding: 0px 20px;
+  width: 75%
+}
+
+#category_form {
+  float: left;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#subcategory_form {
+  float: right;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.alert_text {
+  color: red;
+}
+
+.read_message {
+}
+
+.unread_message {
+  font-weight: bold;
+}
+
+.button_to {
+  display: inline;
+}
+
+.button_to div {
+  display: inline;
+}
+
+#latest_news_container {
+  float: left;
+  width: 55%;
+}
+
+#featured_listings {
+  float: right;
+}
+
+#search {
+  text-align: center;
+  font-size: 12px;
+}
+
+#user_warning {
+  float: right;
+  width: 50%;
+}
+
+.imgfloatleft {
+  float: left;
+  margin-top: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#news_item {
+  float: left;
+  width: 70%;
+}
+
+#more_news_items {
+  float: right;
+  width: 25%;
+}
+
+#password_comment {
+  display: none;
+}
