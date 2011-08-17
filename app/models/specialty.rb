@@ -36,6 +36,7 @@ class Specialty < ActiveRecord::Base
         listing_search.each do |l|
           @specialties << l unless @specialties.detect {|h| h==l}
         end
+        @specialties
       else
         @specialties = Specialty.tagged_with(params[:search]).near(params[:location], 30)
         terms = "%"+params[:search]+"%"
@@ -43,6 +44,7 @@ class Specialty < ActiveRecord::Base
         listing_search.each do |l|
           @specialties << l unless @specialties.detect {|h| h==l}
         end
+        @specialties
       end
     elsif params[:search].blank? && !params[:location].blank?
       if !params[:distance].blank?
@@ -57,6 +59,7 @@ class Specialty < ActiveRecord::Base
       listing_search.each do |l|
         @specialties << l unless @specialties.detect {|h| h==l}
       end
+      @specialties
     else
       @specialties = Specialty.all
     end

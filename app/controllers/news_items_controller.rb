@@ -2,7 +2,7 @@ class NewsItemsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @news_items = NewsItem.all
+    @news_items = NewsItem.all(:order => "created_at DESC")
   end
   
   def show
