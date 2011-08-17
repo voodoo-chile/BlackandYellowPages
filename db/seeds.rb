@@ -9,7 +9,8 @@
 User.create(:username => 'Admin', 
                :email => 'admin@blackandyellowpages.com', 
                :password => 'admin', 
-               :password_confirmation => 'admin')
+               :password_confirmation => 'admin',
+               :id => 1)
 
 @user = User.first
 @user.sponsor_id = 1

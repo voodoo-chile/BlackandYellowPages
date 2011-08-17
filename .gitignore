@@ -4,3 +4,4 @@ log/*.log
 tmp/
 config/deploy.rb
 Capfile
+config/database.yml

@@ -16,6 +16,7 @@ class NewsItemsController < ApplicationController
 
   def create
     @news_item = NewsItem.new(params[:news_item])
+    @news_item.featured = false
     if @news_item.save
       redirect_to news_items_url, :notice => "Successfully created news item."
     else
