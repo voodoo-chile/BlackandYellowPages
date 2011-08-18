@@ -46,4 +46,8 @@ Byp::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  ActionMailer::Base.smtp_settings = File.expand_path(File.join(RAILS_ROOT, 'config', 'actionmailer.yml'))
+
+
 end
