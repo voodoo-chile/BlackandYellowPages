@@ -1,25 +1,29 @@
 class Notifier < ActionMailer::Base
-  default :from => "Black & Yellow Pages Mailer <noreply@blackandyellowpages.com>"
+  default :from => "mailer@blackandyellowpages.com"
   default_url_options[:host] = "blackandyellowpages.com"
   
   def activation_instructions(user)
+    @from = "mailer@blackandyellowpages.com"
     setup_email(user)
     subject		"Activation Instructions"
     @account_activation_url = register_url(user.perishable_token)
   end
   
   def password_reset(user)
+    @from = "mailer@blackandyellowpages.com"
     setup_email(user)
     subject 	"Password Reset Instructions"
     @edit_password_reset_url = edit_password_reset_url(user.perishable_token)
   end
   
   def orphaned(user)
+    @from = "mailer@blackandyellowpages.com"
     setup_email(user)
     subject     "Your Black and Yellow Pages sponsor has withdrawn"
   end
   
   def adoption_offer(user, potential_sponsor)
+    @from = "mailer@blackandyellowpages.com"
     setup_email(user)
     subject  "You have received a Black and Yellow Pages sponsorship offer"
     @adopter = potential_sponsor
@@ -27,12 +31,14 @@ class Notifier < ActionMailer::Base
   end
   
   def offer_accepted(offer)
+    @from = "mailer@blackandyellowpages.com"
     setup_email(offer.potential_sponsor)
     subject "Your Black and Yellow Pages sponsorship offer has been accepted"
     @orphan = offer.user
   end
   
   def offer_rejected(offer)
+    @from = "mailer@blackandyellowpages.com"
     setup_email(offer.potential_sponsor)
     subject "Your Black and Yellow Pages sponsorship offer has been rejected"
     @orphan = offer.user

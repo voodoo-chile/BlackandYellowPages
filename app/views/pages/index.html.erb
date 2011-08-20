@@ -2,19 +2,24 @@
 
 <div id="latest_news_container">
   <div class="column_header">
-      <h3>Latest News</h3>
-    </div>
-    <h3><%= @featured_news.title %></h3>
-    <%= simple_format(@featured_news.body) %>
-    <h3>Other News</h3>
-    <% @latest_news.each do |item| %>
-       <%= link_to item.title, item %><br />
-    <% end %>
+      <h3>We need your help!</h3>
   </div>
+  <p>Please send your feedback, comments, bug reports, or suggestions to 
+    <%= mail_to 'admin@blackandyellowpages.com', 'admin@blackandyellowpages.com', :encode => :hex %>!</p>
+  <div class="column_header">
+      <h3>Latest News</h3>
+  </div>
+  <h3><%= @featured_news.title %></h3>
+  <%= simple_format(@featured_news.body) %>
+  <h3>Other News</h3>
+  <% @latest_news.each do |item| %>
+     <%= link_to item.title, item %><br />
+  <% end %>
+</div>
  
- <div id="featured_listings">
-   <div class="column_header">
-      <h3>Latest Listings</h3>
-    </div>
-   <%= render 'featured_listings' %>
- </div>
+<div id="featured_listings">
+  <div class="column_header">
+    <h3>Latest Listings</h3>
+  </div>
+  <%= render 'featured_listings' %>
+</div>
