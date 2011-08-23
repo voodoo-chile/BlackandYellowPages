@@ -38,8 +38,8 @@
    </div>
    <div id="trust_panel">
      <p>
-       <b>Incoming:</b> <%= link_to incoming_trust_count, :controller => 'users', :action => 'trust_links', :id => @user.id %><br />
-       <b>Outgoing:</b> <%= link_to outgoing_trust_count, :controller => 'users', :action => 'trust_links', :id => @user.id %><br />
+       <b>Incoming:</b> <%= link_to incoming_trust_count(@user), :controller => 'users', :action => 'trust_links', :id => @user.id %><br />
+       <b>Outgoing:</b> <%= link_to outgoing_trust_count(@user), :controller => 'users', :action => 'trust_links', :id => @user.id %><br />
      </p>
    </div>
    <% if current_user && current_user != @user.sponsor && current_user.sponsor != @user && current_user != @user %>

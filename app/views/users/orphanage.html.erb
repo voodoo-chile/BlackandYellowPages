@@ -1,14 +1,22 @@
 <% title "User Orphanage" %>
 
-<table>
+<table CELLPADDING="10">
   <tr>
     <th>Username</th>
+    <th>Specialties</th>
+    <th>Sponsorees</th>
+    <th>Trust Links<br />In</th>
+    <th>Trust Links<br />Out</th>
     <th>Email</th>
 
   </tr>
   <% for user in @users %>
     <tr>
       <td><%= link_to user.username, user %></td>
+      <td align="center"><%= user.specialties.count %></td>
+      <td align="center"><%= user.sponsorees.count %></td>
+      <td align="center"><%= incoming_trust_count(user) %></td>
+      <td align="center"><%= outgoing_trust_count(user) %></td>
       <td><%= mail_to user.email %></td>
       <% if sponsorship_offered?(user) %>
         <% if @offer.expiration > Date.today %>
@@ -17,7 +25,9 @@
           <td>Expired offer. <%= link_to "Renew?", adopt_user_path(user) %></td>
         <% end %>
       <% else %>
-      <td><%= link_to "Sponsor this user", adopt_user_path(user) %></td>
+        <% if can?(:adopt, User) %>
+          <td><%= link_to "Sponsor this user", adopt_user_path(user) %></td>
+        <% end %>
       <% end %>
     </tr>
   <% end %>

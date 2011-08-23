@@ -5,7 +5,8 @@ en:
   unauthorized:
     manage:
       all: "Not authorized to %{action} %{subject}."
-      user: "Not allowed to manage other user accounts."
+      user: "That action is not allowed. Please login or register."
     update:
-      user: "Not allowed to edit other user accounts."
+      user: "You are not allowed to edit other user accounts."
+      specialty: "You are not allowed to edit other users' specialties."
 

@@ -19,12 +19,12 @@ module UsersHelper
     end 
   end
   
-  def incoming_trust_count
-    @trust_in = TrustLink.count( :conditions => "trustee = #{@user.id}" )
+  def incoming_trust_count(user)
+    @trust_in = TrustLink.count( :conditions => "trustee = #{user.id}" )
   end
   
-  def outgoing_trust_count
-    @trust_out = @user.trust_links.count
+  def outgoing_trust_count(user)
+    @trust_out = user.trust_links.count
   end
   
   def sponsorship_offered?(user)

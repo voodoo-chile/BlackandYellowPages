@@ -25,6 +25,8 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     
+    # Authorization error messages defined in /config/locales/en.yml
+    
     user ||= User.new
     if user.role?(:admin)
       can :manage, :all
@@ -41,22 +43,22 @@ class Ability
       can :trust_links, User
       can :trust, User
       can :create, :contact
-      can :update, Contact do |contact|
-        contact.try(:user) == user
-      end
+      can :invite, User
       can :orphan, User do |person|
         person.sponsor_id == user.id
+      end
+      can :orphanage, User
+      can :adopt, User do |person|
+        person.roles.include?('orphan') && person.no_relationship?(user)
+      end
+      can :update, Contact do |contact|
+        contact.try(:user) == user
       end
       can :create, Specialty
       can :manage, Specialty do |specialty|
         specialty.try(:user) == user
       end
       cannot :index, Specialty
-      can :invite, User
-      can :orphanage, User
-      can :adopt, User do |person|
-        person.roles.include?('orphan') && person.no_relationship?(user)
-      end
       can :create, TrustLink
       can :destroy, TrustLink do |link|
         link.try(:user) == user
@@ -67,6 +69,11 @@ class Ability
       can :show, User
       can :update, User do |person|
         person.id == user.id
+      end
+      can :trust_links, User
+      can :orphanage, User
+      can :orphan, User do |person|
+        person.sponsor_id == user.id
       end
       can :create, :contact
       can :update, Contact do |contact|
@@ -92,6 +99,7 @@ class Ability
       can :show, User
       can :create, User
       can :activate, User
+      can :trust_links, User
       can :search, Specialty
       can :show, NewsItem
     end
