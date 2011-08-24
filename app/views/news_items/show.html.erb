@@ -1,5 +1,10 @@
 <% title @news_item.title %>
 
+<% content_for :head do %>
+  <meta name="description" content="A worldwide directory of agorist goods and services." />
+  <meta name="keywords" content="agorist, agorism, counter-economics, underground economy" /> 
+<% end %>
+
 <div id="news_item">
   <%= simple_format(@news_item.body) %>
 </div>
