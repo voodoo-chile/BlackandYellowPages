@@ -6,6 +6,10 @@
   <% title @user.username %>
 <% end %>
 
+<% content_for :head do %>
+  <meta name="keywords" content= <%= @tags %> />
+<% end %>
+
 <%= render :partial => 'left' %>
 
 <div id="center_column">

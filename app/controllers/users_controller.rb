@@ -9,6 +9,12 @@ class UsersController < ApplicationController
     if current_user  && current_user.id != @user.id
       @degrees_of_trust = current_user.degrees_of_trust(@user)
     end
+    @tags = @user.username
+    @user.specialties.each do |specialty|
+      specialty.tag_list.each do |tag|
+        @tags += ", #{tag}"
+      end
+    end
   end
 
   def new
