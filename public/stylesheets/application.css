@@ -190,7 +190,7 @@ a {
   background-color: #f3f393;
   border: solid 2px black;
   width: 400px;
-  height: 170px;
+  height: 195px;
 }
 
 .list_name {
@@ -309,4 +309,8 @@ a {
 
 #password_comment {
   display: none;
+}
+
+#currency_badges {
+  margin-left: 3px;
 }

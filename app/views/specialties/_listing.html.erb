@@ -24,6 +24,11 @@
         <% end %> 
         <%= mail_to specialty.email, specialty.email, :encode => :hex %><br />
         <%= link_to specialty.url, specialty.url %>
+      </div>      
+      <div id="currency_badges">
+        <%= image_tag('bitcoin_icon.png') if specialty.tag_list.include?('bitcoin') %>
+        <%= image_tag('gold_icon.png') if specialty.tag_list.include?('gold') %>
+        <%= image_tag('silver_icon.png') if specialty.tag_list.include?('silver') %>
       </div>
     </div>
   </div>
