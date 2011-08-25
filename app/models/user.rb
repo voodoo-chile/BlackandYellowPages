@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   acts_as_authentic
+  extend FriendlyId
+  friendly_id :username, :use => :slugged
+  
   attr_accessible :username, :email, :roles, :password, :password_confirmation, :sponsor_id, :contact_attributes
   
   has_one :contact

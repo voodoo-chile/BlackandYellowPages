@@ -1,9 +1,10 @@
-<% if current_user  && @user != current_user %>
-  <% content_for :title do %>
+  
+<% content_for :title do %>
+  <% if current_user  && @user != current_user %>
     <%= @user.username %> - <%= @degrees_of_trust %> degrees of trust from you
+  <% else %>
+    Black and Yellow Pages user: <%= @user.username %>
   <% end %>
-<% else %>
-  <% title @user.username %>
 <% end %>
 
 <% content_for :head do %>

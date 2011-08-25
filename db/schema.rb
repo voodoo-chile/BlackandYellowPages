@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815232926) do
+ActiveRecord::Schema.define(:version => 20110825000121) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "user_id"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(:version => 20110815232926) do
     t.boolean  "featured"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "news_items", ["slug"], :name => "index_news_items_on_slug", :unique => true
 
   create_table "specialties", :force => true do |t|
     t.integer  "user_id"
@@ -111,8 +114,10 @@ ActiveRecord::Schema.define(:version => 20110815232926) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "current_login_at"
+    t.string   "slug"
   end
 
+  add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
   add_index "users", ["sponsor_id"], :name => "index_users_on_sponsor_id"
 
 end
