@@ -15,9 +15,13 @@
         </p>
         <p class="list_location">
           <%= specialty.street.titleize %><br />
-          <%= specialty.city %>,
-          <%= specialty.region %>
-          (<%= specialty.country %>)
+          <%= specialty.city %>
+          <% if !specialty.region.blank? %>
+            , <%= specialty.region %>
+          <% end %>
+          <% if !specialty.country.blank? %>
+            (<%= specialty.country %>)
+          <% end %>
           <%= specialty.postal_code %>
         </p>
         <div class="list_contact">
