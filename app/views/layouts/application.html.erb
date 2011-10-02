@@ -15,7 +15,7 @@
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <%- end -%>    
         <div id="logo">
-          <%= link_to image_tag('/images/BNY.png'), root_url %>
+          <%= link_to image_tag('/images/BNY.png', :alt =>"Black and Yellow Pages"), root_url %>
           <div id="search">
             <%= render :partial => 'specialties/advanced_search' %>
           </div>

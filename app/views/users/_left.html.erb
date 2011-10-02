@@ -11,7 +11,7 @@
      <% contact(@user) %>
      <% if !@user.contact.phone.blank? %>
 	    <p><b>Phone:</b><br />
-	      <%= number_to_phone(@user.contact.phone, :area_code => true) %>
+	      <%= @user.contact.phone %>
 	    </p>
 	  <% end %>
 	  <% if !@user.contact.skype.blank? %>

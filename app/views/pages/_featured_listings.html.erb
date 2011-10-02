@@ -25,9 +25,7 @@
           <%= specialty.postal_code %>
         </p>
         <div class="list_contact">
-          <% if !specialty.phone.blank? %>
-            <%= number_to_phone(specialty.phone, :area_code => true) %>
-          <% end %> 
+            <%= specialty.phone %>
           <%= mail_to specialty.email %><br />
           <%= link_to specialty.url, specialty.url %>
         </div>
