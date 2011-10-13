@@ -28,9 +28,10 @@
         <%= link_to specialty.url, specialty.url %>
       </div>      
       <div id="currency_badges">
-        <%= image_tag('bitcoin_icon.png') if specialty.tag_list.include?('bitcoin') %>
-        <%= image_tag('gold_icon.png') if specialty.tag_list.include?('gold') %>
-        <%= image_tag('silver_icon.png') if specialty.tag_list.include?('silver') %>
+        <%= image_tag('bitcoin_icon.png', :alt => 'Bitcoin', :title => 'Bitcoin') if specialty.tag_list.include?('bitcoin') %>
+        <%= image_tag('gold_icon.png', :alt => 'Gold', :title => 'Gold') if specialty.tag_list.include?('gold') %>
+        <%= image_tag('silver_icon.png', :alt => 'Silver', :title => 'Silver') if specialty.tag_list.include?('silver') %>
+        <%= image_tag('shire_silver_icon.png', :alt => 'Shire Silver', :title => 'Shire Silver') if specialty.tag_list.include?('shire silver') %>
       </div>
     </div>
   </div>
