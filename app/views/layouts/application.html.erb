@@ -15,10 +15,20 @@
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <%- end -%>    
         <div id="logo">
-          <%= link_to image_tag('/images/BNY.png', :alt =>"Black and Yellow Pages"), root_url %>
-          <div id="search">
-            <%= render :partial => 'specialties/advanced_search' %>
-          </div>
+          <table>
+            <tr>
+              <td>
+                <%= link_to image_tag('/images/byp_rondel.png', :alt =>"Black and Yellow Pages"), root_url %>
+              </td>
+              <td>
+                <%= link_to image_tag('/images/BNY2.png', :alt =>"Black and Yellow Pages"), root_url %>
+                <div id="search">
+                  <%= render :partial => 'specialties/advanced_search' %>
+                </div>
+              </td>
+              <td><a target="_blank" href="http://agorism.info"><img src='/images/a3_rondel.png'></a></td>
+            </tr>
+          </table>
         </div>
         <div id="agorist_nav">
           <% if current_user %>
@@ -46,6 +56,8 @@
             
         <%= yield %>
       </div>
+    </div>
+    <div id="footer">
     </div>
   </body>
 </html>

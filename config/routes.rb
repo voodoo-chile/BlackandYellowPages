@@ -9,9 +9,12 @@ Byp::Application.routes.draw do
 
   get "pages/faq"
 
+  get "pages/banners"
+
   resources :specialties do
     collection do
       post 'search'
+      get 'tag'
     end
   end
 

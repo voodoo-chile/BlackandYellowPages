@@ -101,6 +101,7 @@ class Ability
       can :activate, User
       can :trust_links, User
       can :search, Specialty
+      can :tag, Specialty
       can :show, NewsItem
     end
     

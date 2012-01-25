@@ -1,4 +1,5 @@
 module PagesHelper
+  include ActsAsTaggableOn::TagsHelper
 
   def get_featured_listings
     @specialties = Specialty.find(:all, :order => "created_at DESC", :limit => 5)

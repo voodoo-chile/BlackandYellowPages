@@ -1,6 +1,6 @@
 class SpecialtiesController < ApplicationController
   load_and_authorize_resource
-  skip_load_resource :only => :search
+  skip_load_resource :only => [:search, :tag]
   
   def index
   end
@@ -39,6 +39,11 @@ class SpecialtiesController < ApplicationController
     @specialties = Specialty.search(params)
     @location = params[:location]
     @near_specialties = Specialty.near(@location, 30)
+  end
+
+  def tag
+    @specialties = Specialty.tagged_with(params[:id])
+    @tag = params[:id]
   end
   
 end
