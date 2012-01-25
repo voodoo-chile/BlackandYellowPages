@@ -11,9 +11,12 @@
   </div>
   <p>Please send your feedback, comments, bug reports, or suggestions to 
     <%= mail_to 'admin@blackandyellowpages.com', 'admin@blackandyellowpages.com', :encode => :hex %>!</p>
-<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= link_to tag.name, { :controller => :specialties, :action => :tag, :id => tag.name }, :class => css_class %>
-<% end %>
+  <div class="column_header">
+    <h3>Specialty Tags</h3>
+  </div>
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, { :controller => :specialties, :action => :tag, :id => tag.name }, :class => css_class %>
+  <% end %>
   <div class="column_header">
       <h3>Latest News</h3>
   </div>
