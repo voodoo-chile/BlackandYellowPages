@@ -1,0 +1,13 @@
+<% title "Specialties tagged with #{@tag}" %>
+
+<table CELLPADDING=20>
+  <% @specialties.in_groups_of(2, false) do |specialties| %>
+    <tr>
+      <% specialties.each do |specialty| %>
+      <td>
+        <%= render :partial => "listing", :locals => { :specialty => specialty } %>
+      </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
