@@ -21,7 +21,7 @@
       <h3>Latest News</h3>
   </div>
   <h3><%= @featured_news.title %></h3>
-  <%= simple_format(@featured_news.body) %>
+  <%= raw(@featured_news.body) %>
   <h3>Other News</h3>
   <% @latest_news.each do |item| %>
      <%= link_to item.title, item %><br />
